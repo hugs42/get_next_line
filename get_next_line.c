@@ -6,7 +6,7 @@
 /*   By: hugsbord <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 16:08:30 by hugsbord          #+#    #+#             */
-/*   Updated: 2018/07/09 17:23:26 by hugsbord         ###   ########.fr       */
+/*   Updated: 2018/07/09 17:55:24 by hugsbord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ static int		ft_strjoin_free(char **buf, char *tmp)
 int				get_next_line(const int fd, char **line)
 {
 	static char		*buf = NULL;
-	char			tmp[BUFFER_SIZE + 1];
+	char			tmp[BUFF_SIZE + 1];
 	ssize_t			read_ret;
 
 	if (fd < 0 || line == NULL)
 		return (ERROR);
 	if ((*line = check_buf(buf)) != NULL)
 		return (SUCCESS_READ);
-	while ((read_ret = read(fd, tmp, BUFFER_SIZE)) > 0)
+	while ((read_ret = read(fd, tmp, BUFF_SIZE)) > 0)
 	{
 		tmp[read_ret] = '\0';
 		if (ft_strjoin_free(&buf, tmp) == ERROR)
