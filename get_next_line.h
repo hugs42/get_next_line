@@ -6,7 +6,7 @@
 /*   By: hugsbord <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 16:12:31 by hugsbord          #+#    #+#             */
-/*   Updated: 2018/07/09 17:31:18 by hugsbord         ###   ########.fr       */
+/*   Updated: 2018/09/25 16:19:34 by hugsbord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "./lib/libft.h"
+# include "./libft/libft.h"
 
 int		get_next_line(const int fd, char **line);
 
@@ -23,6 +23,6 @@ int		get_next_line(const int fd, char **line);
 # define SUCCESS_READ   (1)
 # define FINISH			(0)
 # define ERROR			(-1)
-# define EOF			('\n')
+# define ENDLINE			('\n')
 
 #endif

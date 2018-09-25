@@ -6,7 +6,7 @@
 /*   By: hugsbord <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 16:08:30 by hugsbord          #+#    #+#             */
-/*   Updated: 2018/07/09 17:55:24 by hugsbord         ###   ########.fr       */
+/*   Updated: 2018/09/25 17:02:20 by hugsbord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char		*check_buf(char *buf)
 
 	if (buf == NULL)
 		return (NULL);
-	tmp = ft_strchr(buf, EOF);
+	tmp = ft_strchr(buf, ENDLINE);
 	if (tmp != NULL)
 	{
 		if ((new = malloc((size_t)(tmp - buf))) == NULL)
@@ -75,7 +75,6 @@ int				get_next_line(const int fd, char **line)
 		*line = ft_strdup(buf);
 		free(buf);
 		buf = NULL;
-		return (FINISH);
 	}
 	return (FINISH);
 }
